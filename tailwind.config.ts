@@ -10,7 +10,16 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "#0A0A0A",
+        background: {
+          DEFAULT: "#050509",
+          light: "#0A0A0F",
+        },
+        primary: {
+          DEFAULT: "#6A5CFF",
+          purple: "#6A5CFF",
+          violet: "#8338EC",
+          blue: "#3A86FF",
+        },
         accent: {
           purple: "#6A5CFF",
           violet: "#8338EC",
@@ -24,9 +33,21 @@ const config: Config = {
         xl: "1rem",
         "2xl": "1.5rem",
       },
+      container: {
+        center: true,
+        padding: {
+          DEFAULT: "1rem",
+          sm: "1.5rem",
+          lg: "2rem",
+        },
+      },
+      backdropBlur: {
+        xs: "2px",
+      },
     },
   },
   plugins: [],
 };
 export default config;
+
 

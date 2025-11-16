@@ -4,7 +4,11 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const inter = Inter({ 
+  subsets: ["latin"], 
+  variable: "--font-inter",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Ario Studio — Premium Websites & Digital Experiences",
@@ -17,13 +21,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${inter.variable} antialiased`}>
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
+    <html lang="en" className="dark">
+      <body className={`${inter.variable} font-sans antialiased`}>
+        <div className="relative min-h-screen">
+          <Navbar />
+          <main className="relative z-10">{children}</main>
+          <Footer />
+        </div>
       </body>
     </html>
   );
 }
+
 

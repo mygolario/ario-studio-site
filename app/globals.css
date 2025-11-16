@@ -16,12 +16,29 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
-  background-color: #0A0A0A;
+  min-height: 100vh;
   color: #ffffff;
 }
 
 body {
   font-family: var(--font-inter);
+  background: linear-gradient(180deg, #050509 0%, #0A0A0F 100%);
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(106, 92, 255, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(131, 56, 236, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 40% 20%, rgba(58, 134, 255, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
 }
 
 a {
@@ -31,10 +48,17 @@ a {
 
 @layer utilities {
   .glass {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+  }
+  
+  .glass-strong {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
   }
   
   .gradient-text {
@@ -43,5 +67,10 @@ a {
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
+  
+  .gradient-bg {
+    background: linear-gradient(135deg, #6A5CFF 0%, #8338EC 50%, #3A86FF 100%);
+  }
 }
+
 
